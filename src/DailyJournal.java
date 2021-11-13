@@ -11,12 +11,8 @@ public class DailyJournal {
     DailyJournal(String date){
 
         path = "./files/journalEntries/" + date;
-        file = new File(path + ".txt");
-        if(file.exists()){
-            path += "." + counter++;
-            file = new File(path + ".txt");
-        }
-        try {
+
+        /*try {
             System.out.println(path);
 
             System.out.println(file.getAbsolutePath());
@@ -24,14 +20,13 @@ public class DailyJournal {
         }catch (IOException e){
             System.out.println("FILE NOT CREATED IN JOURNAL ENTRY!");
             e.printStackTrace();
-        }
+        }*/
 
 
     }
 
     void addEntry(String Entry){
-
-
+        getFileName();
         try {
             fileWriter = new FileWriter(file);
             fileWriter.write(Entry);
@@ -40,6 +35,18 @@ public class DailyJournal {
             System.out.println("FILE NOT WRITTEN TO IN JOURNAL ENTRY!");
             e.printStackTrace();
         }
+
+    }
+
+    void getFileName(){
+        file = new File(path +"(0)"  + ".txt");
+        while(file.exists()){
+            file = new File(path + "(" + counter++ +")"+ ".txt");
+        }
+
+
+    }
+    void readEntry(){
 
     }
 
