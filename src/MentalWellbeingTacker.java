@@ -8,7 +8,9 @@ public class MentalWellbeingTacker {
     public static void main(String[] args){
 
         getDate();
-        GUI gui = new GUI(date);
+        //GUI gui = new GUI(date);
+        Affirmations aff = new Affirmations();
+        System.out.println(aff.getAffirmation());
         //final test
 
     }

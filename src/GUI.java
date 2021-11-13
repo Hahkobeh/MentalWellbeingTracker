@@ -38,6 +38,10 @@ public class GUI {
         //
     }
 
+    String getAffirmation(){
+        return affirmations.getAffirmation();
+    }
+
 }
 
 
