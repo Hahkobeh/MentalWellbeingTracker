@@ -5,6 +5,7 @@ import javax.swing.*;
 public class GUI {
     private JFrame frame;
     private String date;
+    private JButton get_affirmation = new JButton("Daily Affirmation!");
     Affirmations affirmations;
     DailyJournal dailyJournal;
 
