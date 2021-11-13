@@ -9,10 +9,10 @@ public class MentalWellbeingTacker {
     public static void main(String[] args){
 
         getDate();
-        GUI gui = new GUI(date);
-        /*DailyJournal dj = new DailyJournal(date);
+        //GUI gui = new GUI(date);
+        DailyJournal dj = new DailyJournal(date);
         dj.addEntry("journal entry 1!");
-        dj.addEntry("HELLO THGIS IS MY JOURNAL ENTRY#2!");*/
+        dj.addEntry("HELLO THGIS IS MY JOURNAL ENTRY#2!");
         //final test
 
     }
