@@ -16,9 +16,11 @@ public class GUI {
 
     GUI(String date){
         this.date = date;
-        get_affirmation = new JButton("Cheer me up!");
+        Icon affirmationIcon = new ImageIcon("images/affirmationButtonOther 1.png");
+        get_affirmation = new JButton(affirmationIcon);
         journal_entry = new JButton("Add journal entry");
         get_past_data = new JButton("Read journal entry");
+        
         initializeGUI();
         initializeAffirmations();
         initializeDailyJournal();
@@ -38,13 +40,17 @@ public class GUI {
 
         frame.add(panel);
         JLabel header = new JLabel("Today is " + date , JLabel.CENTER);
+        header.setBounds(150, 20, 340, 40);
 
         frame.add(header);
         JLabel rating = new JLabel("How was your day?" , JLabel.CENTER);
+        rating.setBounds(150, 70, 340, 20);
 
         frame.add(rating);
 
-
+        journal_entry.setBounds(150, 120, 340, 10 );
+        journal_entry.setBounds(150, 140, 340, 10 );
+        journal_entry.setBounds(150, 150, 340, 10 );
         frame.add(journal_entry);
         frame.add(get_affirmation);
         frame.add(get_past_data);
