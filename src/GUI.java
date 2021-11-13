@@ -26,6 +26,8 @@ public class GUI {
     }
 
     private static void placeComponents(JPanel panel) {
+
+        //
     }
 
 }
