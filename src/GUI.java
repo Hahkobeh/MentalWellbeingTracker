@@ -7,6 +7,8 @@ public class GUI {
     private String date;
 
     private JButton get_affirmation; 
+    private JButton journal_entry;
+    private JButton get_past_data;
     
     String affirmations_txt;
     Affirmations affirmations;
@@ -14,7 +16,9 @@ public class GUI {
 
     GUI(String date){
         this.date = date;
-        get_affirmation = new JButton("Daily Affirmation!");
+        get_affirmation = new JButton("Cheer me up!");
+        journal_entry = new JButton("Add journal entry");
+        get_past_data = new JButton("Read journal entry");
         initializeGUI();
         initializeAffirmations();
         initializeDailyJournal();
@@ -30,7 +34,18 @@ public class GUI {
         JPanel panel = new JPanel();
 
         frame.add(panel);
+        JLabel header = new JLabel("Today is " + date , JLabel.CENTER);
+
+        frame.add(header);
+        JLabel rating = new JLabel("How was your day?" , JLabel.CENTER);
+
+        frame.add(rating);
+
+
+        frame.add(journal_entry);
         frame.add(get_affirmation);
+        frame.add(get_past_data);
+        
 
         placeComponents(panel); // Place components on the window
 
@@ -39,9 +54,37 @@ public class GUI {
             public void actionPerformed(ActionEvent e){
                 try{
                     affirmations_txt = affirmations.getAffirmation();
-                    JOptionPane.showMessageDialog(null, affirmations_txt);
+                    JLabel affirm = new JLabel(affirmations_txt, JLabel.CENTER);
+                    frame.add(affirm);
                 }catch(Exception err){
                     System.out.println("affirmation event listener error");
+                }
+            }
+        });
+
+        journal_entry.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    JTextField journalText = new JTextField(200);
+
+
+                    frame.add(journalText);
+                    
+                    
+                }catch(Exception err){
+                    System.out.println("journal_entry event listener error");
+                }
+            }
+        });
+
+        get_past_data.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    
+                }catch(Exception err){
+                    System.out.println("get_past_data event listener error");
                 }
             }
         });
