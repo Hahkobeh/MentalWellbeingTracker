@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -8,9 +9,10 @@ public class MentalWellbeingTacker {
     public static void main(String[] args){
 
         getDate();
-        //GUI gui = new GUI(date);
-        Affirmations aff = new Affirmations();
-        System.out.println(aff.getAffirmation());
+        GUI gui = new GUI(date);
+        /*DailyJournal dj = new DailyJournal(date);
+        dj.addEntry("journal entry 1!");
+        dj.addEntry("HELLO THGIS IS MY JOURNAL ENTRY#2!");*/
         //final test
 
     }
