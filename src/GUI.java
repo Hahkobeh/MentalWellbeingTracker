@@ -6,11 +6,13 @@ public class GUI {
     private JFrame frame;
     private String date;
     Affirmations affirmations;
+    DailyJournal dailyJournal;
 
     GUI(String date){
         this.date = date;
         initializeGUI();
         initializeAffirmations();
+        initializeDailyJournal();
 
     }
     void initializeGUI(){
@@ -31,6 +33,10 @@ public class GUI {
     }
     void initializeAffirmations(){
         affirmations = new Affirmations();
+    }
+
+    void initializeDailyJournal(){
+        dailyJournal = new DailyJournal(date);
     }
 
     private static void placeComponents(JPanel panel) {

@@ -5,11 +5,9 @@ import java.util.Vector;
 import java.util.Random;
 
 public class Affirmations {
-    private File file;
-    private int numberOfLines;
+    private final int numberOfLines;
     private Vector<String> affirmationList;
     private Scanner scanner;
-    private String path = "files/affirmations.txt";
 
     Affirmations(){
 
@@ -23,7 +21,8 @@ public class Affirmations {
 
     void readFile(){
 
-        file = new File(path);
+        String path = "files/affirmations.txt";
+        File file = new File(path);
         affirmationList = new Vector<>();
         try {
             scanner = new Scanner(file);
