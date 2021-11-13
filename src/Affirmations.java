@@ -32,7 +32,7 @@ public class Affirmations {
                 affirmationList.add(scanner.nextLine());
             }
         }catch (FileNotFoundException e){
-            System.out.println("FILE NOT FOUND!");
+            System.out.println("FILE NOT FOUND IN AFFIRMATIONS!");
             e.printStackTrace();
         }
         scanner.close();

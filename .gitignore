@@ -1,2 +1,4 @@
 .idea
 .out
+files/journalEntries/*
+!files/journalEntries/gitkeep
