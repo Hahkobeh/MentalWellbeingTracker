@@ -5,12 +5,16 @@ import javax.swing.*;
 public class GUI {
     private JFrame frame;
     private String date;
-    private JButton get_affirmation = new JButton("Daily Affirmation!");
+
+    private JButton get_affirmation; 
+    
+    String affirmations_txt;
     Affirmations affirmations;
     DailyJournal dailyJournal;
 
     GUI(String date){
         this.date = date;
+        get_affirmation = new JButton("Daily Affirmation!");
         initializeGUI();
         initializeAffirmations();
         initializeDailyJournal();
@@ -26,8 +30,21 @@ public class GUI {
         JPanel panel = new JPanel();
 
         frame.add(panel);
+        frame.add(get_affirmation);
 
         placeComponents(panel); // Place components on the window
+
+        get_affirmation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    affirmations_txt = affirmations.getAffirmation();
+                    JOptionPane.showMessageDialog(null, affirmations_txt);
+                }catch(Exception err){
+                    System.out.println("affirmation event listener error");
+                }
+            }
+        });
 
         frame.setVisible(true);
 
