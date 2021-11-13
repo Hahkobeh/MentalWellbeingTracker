@@ -4,12 +4,17 @@ import javax.swing.*;
 
 public class GUI {
     private JFrame frame;
+    private String date;
+    Affirmations affirmations;
 
-    GUI(){
+    GUI(String date){
+        this.date = date;
         initializeGUI();
+        initializeAffirmations();
 
     }
     void initializeGUI(){
+
         this.frame = new JFrame("Mental Wellness Tracker");
         frame.setSize(600,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If window is closed, stop the program
@@ -23,6 +28,9 @@ public class GUI {
 
         frame.setVisible(true);
 
+    }
+    void initializeAffirmations(){
+        affirmations = new Affirmations();
     }
 
     private static void placeComponents(JPanel panel) {
