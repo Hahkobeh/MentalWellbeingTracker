@@ -10,9 +10,9 @@ public class DailyJournal {
 
     DailyJournal(String date){
 
-        path = "./files/journalEntries/" + date;
+        path = "../files/journalEntries/" + date;
 
-        /*try {
+        try {
             System.out.println(path);
 
             System.out.println(file.getAbsolutePath());
@@ -20,7 +20,7 @@ public class DailyJournal {
         }catch (IOException e){
             System.out.println("FILE NOT CREATED IN JOURNAL ENTRY!");
             e.printStackTrace();
-        }*/
+        }
 
 
     }
