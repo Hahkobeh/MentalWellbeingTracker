@@ -22,6 +22,7 @@ public class GUI {
         initializeGUI();
         initializeAffirmations();
         initializeDailyJournal();
+        frame.setVisible(true);
 
     }
     void initializeGUI(){
@@ -32,6 +33,8 @@ public class GUI {
         frame.setLocationRelativeTo(null); // Makes window open in middle of screen
 
         JPanel panel = new JPanel();
+        GridLayout gridLayout = new GridLayout(5,1, 10, 5);
+        panel.setLayout(gridLayout);
 
         frame.add(panel);
         JLabel header = new JLabel("Today is " + date , JLabel.CENTER);
@@ -89,7 +92,7 @@ public class GUI {
             }
         });
 
-        frame.setVisible(true);
+
 
     }
     void initializeAffirmations(){
