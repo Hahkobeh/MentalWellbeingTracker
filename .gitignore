@@ -3,3 +3,8 @@
 files/journalEntries/*
 !files/journalEntries/gitkeep
 .DS_Store
+.Affirmations
+.DailyJournal
+.GUI
+.MentalWellbeingTracker
+.MoodTracker
