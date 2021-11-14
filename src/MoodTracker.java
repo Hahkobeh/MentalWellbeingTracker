@@ -1,19 +1,27 @@
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 import java.sql.*;
 import java.util.*;
 
+class DataPoint {
+    public int id;
+    public String date;
+    public int moodRating;
+}
 
+
+@SuppressWarnings("SqlResolve")
 public class MoodTracker {
     private Connection connectDB;
-    private static String userDB="User1";
-    private static String passDB="password";
+    private static String username="User1";
+    private static String password="password";
 
     public MoodTracker(){
         getDatabase();
     }
+
     public void addMood(int mood, String date){
-        String query = "INSERT INTO MOODS (timeDate,Mood) VALUES ('"+ date +"',"+ mood +");";
+
+        String query = "INSERT INTO MOODS (timeDate,Moodrating) VALUES ('"+date+"',"+mood+");";
         try{
             PreparedStatement statement = connectDB.prepareStatement(query);
             statement.executeUpdate(query);
@@ -22,11 +30,10 @@ public class MoodTracker {
         }
     }
 
-    List<List<String>> grabAllMoodss(){
-        int numberOfEntries = 0;
+    Vector<DataPoint> grabAllMoods(){
+        /*int numberOfEntries = 0;
         String query1 = "SELECT COUNT(*) FROM MOODS";
 
-        //TODO - can probably remove
 
         try{
             Statement statement = connectDB.createStatement();
@@ -38,32 +45,37 @@ public class MoodTracker {
 
         }catch(SQLException e){
             e.printStackTrace();
-        }
+        }*/
 
-        String query2 = "SELECT timeDate, moods FROM MOODS;";
+        String query2 = "SELECT EntryID, TimeDate, MoodRating FROM Moods;";
 
-        List<List<String>> data = new ArrayList<List<String>>();
+        Vector<DataPoint> data = new Vector<>();
+        //List<List<String>> data = new ArrayList<List<String>>();
 
         try{
             Statement statement = connectDB.createStatement();
             ResultSet resultSet = statement.executeQuery(query2);
             while(resultSet.next()){
-                List<String> tempArray = new ArrayList<String>();
-                tempArray.add(resultSet.getString("timeDate"));
-                tempArray.add(String.valueOf(resultSet.getFloat("moods")));
+                DataPoint temp = new DataPoint();
+                temp.id = 1;
+                temp.id = resultSet.getInt("EntryID");
+                temp.date = resultSet.getString("TimeDate");
+                temp.moodRating = resultSet.getInt("MoodRating");
 
-                data.add(tempArray);
+                data.add(temp);
             }
 
         }catch(SQLException e){
             e.printStackTrace();
         }
+        //data.forEach((n) -> System.out.println(n.date));
+
         return data;
     }
 
     public void getDatabase() {
         try{
-            connectDB = DriverManager.getConnection("jdbc:mysql://localhost/MoodsDB", userDB, passDB);
+            connectDB = DriverManager.getConnection("jdbc:mysql://localhost/mwt", username, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -14,11 +14,14 @@ public class MentalWellbeingTracker {
 
         getDate();
         //GUI gui = new GUI(date);
-        Affirmations aff = new Affirmations();
+        /*Affirmations aff = new Affirmations();
         System.out.println(aff.getAffirmation());
         DailyJournal dj = new DailyJournal(date);
         dj.addEntry("journal entry 1!");
-        dj.addEntry("HELLO THGIS IS MY JOURNAL ENTRY#2!");
+        dj.addEntry("HELLO THGIS IS MY JOURNAL ENTRY#2!");*/
+        MoodTracker md = new MoodTracker();
+        md.addMood(1,"14-11-2021");
+        md.grabAllMoods();
         //final test
 
     }
@@ -27,7 +30,7 @@ public class MentalWellbeingTracker {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         date = sdf.format(cal.getTime());
-        System.out.println(date);
+        System.out.println("Today's date is: "+date);
 
     }
 }
