@@ -27,9 +27,12 @@ public class DailyJournal {
 
     void addEntry(String Entry){
         getFileName();
+
         try {
+            file.createNewFile();
             fileWriter = new FileWriter(file);
             fileWriter.write(Entry);
+            System.out.println(Entry);
             fileWriter.close();
         }catch (IOException e){
             System.out.println("FILE NOT WRITTEN TO IN JOURNAL ENTRY!");
@@ -43,6 +46,7 @@ public class DailyJournal {
         while(file.exists()){
             file = new File(path + "(" + counter++ +")"+ ".txt");
         }
+        System.out.println(file.getAbsolutePath());
 
 
     }
