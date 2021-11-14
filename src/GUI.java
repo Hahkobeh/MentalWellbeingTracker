@@ -40,11 +40,11 @@ public class GUI {
     ImageIcon newOkayIcon = new ImageIcon(okayTrans); // assign to a new ImageIcon instance
 
     Image notTheBestImg = notTheBest.getImage(); // transform it
-    Image notTheBestTrans = okayImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
+    Image notTheBestTrans = notTheBestImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
     ImageIcon newNotTheBestIcon = new ImageIcon(notTheBestTrans); // assign to a new ImageIcon instance
 
     Image sadImg = sad.getImage(); // transform it
-    Image sadTrans = okayImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
+    Image sadTrans = sadImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
     ImageIcon newSadIcon = new ImageIcon(sadTrans); // assign to a new ImageIcon instance
 
     String affirmations_txt;
@@ -93,26 +93,60 @@ public class GUI {
         rating.setFont(new Font("Courier", Font.PLAIN, 15));
         panel.add(rating);
 
+        // Mad Button
         madButton.setBounds(30, 90, 100, 100);
-        panel.add(happyButton);
-        happyButton.setBounds(140, 90, 100, 100);
-        panel.add(okayButton);
-        sadButton.setBounds(250, 90, 100, 100);
-        panel.add(notTheBestButton);
-        okayButton.setBounds(360, 90, 100, 100);
-        panel.add(sadButton);
-        notTheBestButton.setBounds(470, 90, 100, 100);
+        madButton.setBorderPainted(false);
+        madButton.setContentAreaFilled(false);
+        madButton.setOpaque(false);
         panel.add(madButton);
-
         JLabel mad = new JLabel("MAD", JLabel.CENTER);
         mad.setBounds(30, 150, 100, 100);
         mad.setFont(new Font("Courier", Font.PLAIN, 12));
         panel.add(mad);
 
+        // Sad Button
+        sadButton.setBounds(140, 90, 100, 100);
+        sadButton.setBorderPainted(false);
+        sadButton.setContentAreaFilled(false);
+        sadButton.setOpaque(false);
+        panel.add(sadButton);
+        JLabel sad = new JLabel("SAD", JLabel.CENTER);
+        sad.setBounds(140, 150, 100, 100);
+        sad.setFont(new Font("Courier", Font.PLAIN, 12));
+        panel.add(sad);
+
+        // Not the best Button
+        notTheBestButton.setBounds(250, 90, 100, 100);
+        notTheBestButton.setBorderPainted(false);
+        notTheBestButton.setContentAreaFilled(false);
+        notTheBestButton.setOpaque(false);
+        panel.add(notTheBestButton);
         JLabel notTheBest = new JLabel("NOT THE BEST", JLabel.CENTER);
-        notTheBest.setBounds(140, 150, 100, 100);
+        notTheBest.setBounds(250, 150, 100, 100);
         notTheBest.setFont(new Font("Courier", Font.PLAIN, 12));
         panel.add(notTheBest);
+
+        // Okay Button
+        okayButton.setBounds(360, 90, 100, 100);
+        okayButton.setBorderPainted(false);
+        okayButton.setContentAreaFilled(false);
+        okayButton.setOpaque(false);
+        panel.add(okayButton);
+        JLabel okay = new JLabel("OKAY", JLabel.CENTER);
+        okay.setBounds(360, 150, 100, 100);
+        okay.setFont(new Font("Courier", Font.PLAIN, 12));
+        panel.add(okay);
+
+        // Happy Button
+        happyButton.setBounds(470, 90, 100, 100);
+        happyButton.setBorderPainted(false);
+        happyButton.setContentAreaFilled(false);
+        happyButton.setOpaque(false);
+        panel.add(happyButton);
+        JLabel happy = new JLabel("HAPPY", JLabel.CENTER);
+        happy.setBounds(470, 150, 100, 100);
+        happy.setFont(new Font("Courier", Font.PLAIN, 12));
+        panel.add(happy);
 
         frame.add(panel);
         /*
