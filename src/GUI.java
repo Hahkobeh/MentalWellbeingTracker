@@ -99,8 +99,8 @@ public class GUI extends JFrame {
 
     void setBackground() {
         background = new JLabel(transformImage(backgroundImg, 600, 600));
-        con.add(background);
         background.setLayout(new FlowLayout());
+        con.add(background);
         // background.add(buttons);
     }
 
@@ -140,7 +140,7 @@ public class GUI extends JFrame {
         // JLabel mad = new JLabel("MAD", JLabel.CENTER);
         // mad.setBounds(30, 150, 100, 100);
         // mad.setFont(new Font("Courier", Font.PLAIN, 12));
-        // panel.add(mad);
+        // con.add(mad);
     }
 
         // JPanel panel = new JPanel();
@@ -262,7 +262,7 @@ public class GUI extends JFrame {
         //         }
         //     }
         // });
-        
+
         // getAffirmation.addActionListener(new ActionListener() {
         //     @Override
         //     public void actionPerformed(ActionEvent e) {
