@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class MentalWellbeingTacker {
+public class MentalWellbeingTracker {
     private static String date;
     String affirmations_txt;
     Affirmations affirmations;
