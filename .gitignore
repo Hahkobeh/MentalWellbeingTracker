@@ -1,6 +1,11 @@
 .idea
+
 .out
+
 files/journalEntries/*
+
 !files/journalEntries/gitkeep
+
 .DS_Store
+
 *.class
