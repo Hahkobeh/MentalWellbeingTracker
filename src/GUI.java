@@ -20,7 +20,7 @@ public class GUI {
     private JButton notTheBestButton;
 
     // Icons
-    private Icon affirmationIcon = new ImageIcon("../images/affirmationButtonOther 1.png");
+    private Icon affirmationIcon = new ImageIcon("./images/affirmationButtonOther 1.png");
 
     private ImageIcon happy = new ImageIcon("./images/happy.png");
     private ImageIcon mad = new ImageIcon("./images/mad.png");
@@ -160,7 +160,7 @@ public class GUI {
         happy.setFont(new Font("Courier", Font.PLAIN, 12));
         panel.add(happy);
         
-         journalEntry.setBorderPainted(false);
+        journalEntry.setBorderPainted(false);
         journalEntry.setContentAreaFilled(false);
         journalEntry.setOpaque(false);
         journalEntry.setBounds(125, 270, 350, 30);
@@ -222,6 +222,13 @@ public class GUI {
                 }
             }
         });
+        getAffirmation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                header.setText(affirmations.getAffirmation());
+            }
+        });
+
         /*
          * journalEntry.setBounds(150, 120, 340, 10 ); getAffirmation.setBounds(150,
          * 140, 340, 10 ); //getPastData.setBounds(150, 150, 340, 10 );
