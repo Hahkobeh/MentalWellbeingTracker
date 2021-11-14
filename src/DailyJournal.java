@@ -10,7 +10,7 @@ public class DailyJournal {
 
     DailyJournal(String date){
 
-        path = "../files/journalEntries/" + date;
+        path = "./files/journalEntries/" + date;
 
         /*try {
             System.out.println(path);
