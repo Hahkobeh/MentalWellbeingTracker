@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class MoodTracker {
-    private private Connection connectDB;
+    private Connection connectDB;
     private static String userDB="User1";
     private static String passDB="password";
 
