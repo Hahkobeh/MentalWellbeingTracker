@@ -21,7 +21,7 @@ public class Affirmations {
 
     void readFile(){
 
-        String path = "../files/affirmations.txt";
+        String path = "./files/affirmations.txt";
         File file = new File(path);
         affirmationList = new Vector<>();
         try {

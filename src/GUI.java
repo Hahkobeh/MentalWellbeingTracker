@@ -7,6 +7,7 @@ import javax.swing.*;
 public class GUI {
     private JFrame frame;
     private String date;
+    private boolean chooseMood = false;
 
     private JButton getAffirmation;
     private JButton journalEntry;
@@ -61,9 +62,11 @@ public class GUI {
     String affirmations_txt;
     Affirmations affirmations;
     DailyJournal dailyJournal;
+    MoodTracker moodTracker;
 
     GUI(String date) {
         this.date = date;
+        initializeClasses();
 
         madButton = new JButton(newMadIcon);
         happyButton = new JButton(newHappyIcon);
@@ -76,8 +79,6 @@ public class GUI {
         getPastData = new JButton("Read journal entry");
 
         initializeGUI();
-        // initializeAffirmations();
-        // initializeDailyJournal();
         frame.setVisible(true);
 
     }
@@ -173,6 +174,54 @@ public class GUI {
         panel.add(getAffirmation);
 
         frame.add(panel);
+
+        happyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!chooseMood) {
+                    action(5);
+                    header.setText("You picked Happy!");
+                }
+            }
+        });
+
+        okayButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!chooseMood) {
+                    action(4);
+                    header.setText("You picked okay.");
+                }
+
+            }
+        });
+        notTheBestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!chooseMood) {
+                    action(3);
+                    header.setText("You picked not the best.");
+                }
+            }
+        });
+        sadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!chooseMood) {
+                    action(2);
+                    header.setText("You picked sad :(");
+                }
+            }
+        });
+        madButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!chooseMood) {
+                    action(1);
+                    header.setText("You picked Happy!");
+                }
+            }
+        });
         /*
          * journalEntry.setBounds(150, 120, 340, 10 ); getAffirmation.setBounds(150,
          * 140, 340, 10 ); //getPastData.setBounds(150, 150, 340, 10 );
@@ -209,13 +258,17 @@ public class GUI {
          */
 
     }
+    void action(int moodValue){
+        moodTracker.addMood(moodValue,date);
+        chooseMood = true;
 
-    void initializeAffirmations() {
-        affirmations = new Affirmations();
     }
 
-    void initializeDailyJournal() {
+
+    void initializeClasses() {
+        affirmations = new Affirmations();
         dailyJournal = new DailyJournal(date);
+        moodTracker = new MoodTracker();
     }
 
     private static void placeComponents(JPanel panel) {
