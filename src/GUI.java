@@ -20,7 +20,7 @@ public class GUI {
     private JButton notTheBestButton;
 
     // Icons
-    private Icon affirmationIcon = new ImageIcon("../images/affirmationButtonOther 1.png");
+    private Icon affirmationIcon = new ImageIcon("./images/affirmationButtonOther 1.png");
 
     private ImageIcon happy = new ImageIcon("./images/happy.png");
     private ImageIcon mad = new ImageIcon("./images/mad.png");
