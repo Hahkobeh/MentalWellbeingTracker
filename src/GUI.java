@@ -125,7 +125,7 @@ public class GUI extends JFrame {
     void setFaceButtons() {
         setButton(madButton, 30, 200, 100, 100);
         setButton(sadButton, 140, 200, 100, 100);
-        setButton(notTheBestButton, 150, 200, 100, 100);
+        setButton(notTheBestButton, 250, 200, 100, 100);
         setButton(okayButton, 360, 200, 100, 100);
         setButton(happyButton, 470, 200, 100, 100);
 
