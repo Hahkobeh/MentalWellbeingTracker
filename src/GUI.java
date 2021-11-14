@@ -37,6 +37,8 @@ public class GUI {
         frame.setLocationRelativeTo(null); // Makes window open in middle of screen
 
         JPanel panel = new JPanel();
+        FlowLayout layout = new FlowLayout(FlowLayout.CENTER,10,5);
+        panel.setLayout(layout);
 
 
 
