@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.Flow;
@@ -32,11 +33,11 @@ public class GUI {
     GUI(String date){
         this.date = date;
 
-        madButton = new JButton(mad);
-        happyButton = new JButton(happy);
-        sadButton = new JButton(sad);
-        okayButton = new JButton(okay);
-        notTheBestButton = new JButton(notTheBest);
+        madButton = new JButton("Mad");
+        happyButton = new JButton("Happy");
+        sadButton = new JButton("sad");
+        okayButton = new JButton("Okay");
+        notTheBestButton = new JButton("not baller");
 
         
         getAffirmation = new JButton(affirmationIcon);
@@ -73,8 +74,16 @@ public class GUI {
         rating.setFont(new Font("Courier", Font.PLAIN, 15));
         panel.add(rating);
 
-        madButton.setBounds(10, 90, 100, 100);
+        madButton.setBounds(10, 90, 70, 30);
         panel.add(madButton);
+        happyButton.setBounds(130, 90, 70, 30);
+        panel.add(happyButton);
+        sadButton.setBounds(260, 90, 70, 30);
+        panel.add(sadButton);
+        okayButton.setBounds(390, 90, 70, 30);
+        panel.add(okayButton);
+        notTheBestButton.setBounds(520, 90, 70, 30);
+        panel.add(notTheBestButton);
         
         frame.add(panel);
 /*
@@ -149,7 +158,6 @@ public class GUI {
     }
 
 }
-
 
 
 
