@@ -76,9 +76,16 @@ public class GUI extends JFrame {
 
     void initializeMenuGUI() {
         buttons = new JPanel();
+
         buttons.setOpaque(false);
+        //buttons.setLayout(null);
+
+
+
+
 
         con = getContentPane();
+        //con.add(buttons);
 
         setTitle("Mental Wellness Tracker");
         setSize(600, 600);
@@ -100,6 +107,7 @@ public class GUI extends JFrame {
     void setBackground() {
         background = new JLabel(transformImage(backgroundImg, 600, 600));
         background.setLayout(new FlowLayout());
+
         con.add(background);
         // background.add(buttons);
     }
@@ -123,7 +131,7 @@ public class GUI extends JFrame {
     }
 
     void setFaceButtons() {
-        setButton(madButton, 30, 200, 100, 100);
+        setButton(madButton, 50, 200, 100, 100);
         setButton(sadButton, 140, 200, 100, 100);
         setButton(notTheBestButton, 250, 200, 100, 100);
         setButton(okayButton, 360, 200, 100, 100);
@@ -312,7 +320,7 @@ void addFaceListener(JButton but, int actionNum, String words){
             if(!chooseMood) {
                 action(actionNum);
                 header.setText(words);
-                con.add(header);
+                //con.add(header);
             }
         }
     });
@@ -329,10 +337,6 @@ void addFaceListener(JButton but, int actionNum, String words){
         moodTracker = new MoodTracker();
     }
 
-    private static void placeComponents(JPanel panel) {
-
-        //
-    }
 
     String getAffirmation() {
         return affirmations.getAffirmation();
