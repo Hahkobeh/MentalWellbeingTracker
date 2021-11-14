@@ -1,14 +1,15 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.concurrent.Flow;
 import javax.swing.*;
 
 public class GUI {
     private JFrame frame;
     private String date;
 
-    private JButton get_affirmation; 
-    private JButton journal_entry;
-    private JButton get_past_data;
+    private JButton getAffirmation;
+    private JButton journalEntry;
+    private JButton getPastData;
     
     String affirmations_txt;
     Affirmations affirmations;
@@ -17,9 +18,9 @@ public class GUI {
     GUI(String date){
         this.date = date;
         Icon affirmationIcon = new ImageIcon("images/affirmationButtonOther 1.png");
-        get_affirmation = new JButton(affirmationIcon);
-        journal_entry = new JButton("Add journal entry");
-        get_past_data = new JButton("Read journal entry");
+        //getAffirmation = new JButton(affirmationIcon);
+        journalEntry = new JButton("Add journal entry");
+        //getPastData = new JButton("Read journal entry");
         
         initializeGUI();
         initializeAffirmations();
@@ -31,34 +32,39 @@ public class GUI {
 
         this.frame = new JFrame("Mental Wellness Tracker");
         frame.setSize(600,600);
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If window is closed, stop the program
         frame.setLocationRelativeTo(null); // Makes window open in middle of screen
 
         JPanel panel = new JPanel();
-        GridLayout gridLayout = new GridLayout(5,1, 10, 5);
-        panel.setLayout(gridLayout);
+
+
 
         frame.add(panel);
         JLabel header = new JLabel("Today is " + date , JLabel.CENTER);
-        header.setBounds(150, 20, 340, 40);
+        header.setForeground(Color.BLUE);
+        header.setBounds(125, 20, 340, 40);
+        header.setFont(new Font("Courier", Font.PLAIN, 30));
+        panel.add(header);
 
-        frame.add(header);
         JLabel rating = new JLabel("How was your day?" , JLabel.CENTER);
         rating.setBounds(150, 70, 340, 20);
 
+
         frame.add(rating);
 
-        journal_entry.setBounds(150, 120, 340, 10 );
-        journal_entry.setBounds(150, 140, 340, 10 );
-        journal_entry.setBounds(150, 150, 340, 10 );
-        frame.add(journal_entry);
-        frame.add(get_affirmation);
-        frame.add(get_past_data);
+/*
+        journalEntry.setBounds(150, 120, 340, 10 );
+        getAffirmation.setBounds(150, 140, 340, 10 );
+        //getPastData.setBounds(150, 150, 340, 10 );
+        frame.add(journalEntry);
+        frame.add(getAffirmation);
+        //frame.add(getPastData);
         
 
         placeComponents(panel); // Place components on the window
 
-        get_affirmation.addActionListener(new ActionListener() {
+        getAffirmation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
@@ -71,7 +77,7 @@ public class GUI {
             }
         });
 
-        journal_entry.addActionListener(new ActionListener() {
+        journalEntry.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
@@ -87,7 +93,7 @@ public class GUI {
             }
         });
 
-        get_past_data.addActionListener(new ActionListener() {
+        getPastData.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
@@ -96,7 +102,7 @@ public class GUI {
                     System.out.println("get_past_data event listener error");
                 }
             }
-        });
+        });*/
 
 
 
