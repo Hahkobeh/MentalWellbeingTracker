@@ -26,6 +26,8 @@ public class GUI {
     private ImageIcon okay = new ImageIcon("./images/okay.png");
     private ImageIcon notTheBest = new ImageIcon("./images/notTheBest.png");
     private ImageIcon sad = new ImageIcon("./images/sad.png");
+    private ImageIcon affirm = new ImageIcon("./images/affirmationButtonOther 1.png");
+    private ImageIcon journal = new ImageIcon("./images/journalBut.png");
 
     Image happyImg = happy.getImage(); // transform it
     Image happyTrans = happyImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
@@ -46,6 +48,15 @@ public class GUI {
     Image sadImg = sad.getImage(); // transform it
     Image sadTrans = sadImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
     ImageIcon newSadIcon = new ImageIcon(sadTrans); // assign to a new ImageIcon instance
+    
+    Image journalImg = journal.getImage(); // transform it
+    Image journalTrans = journalImg.getScaledInstance(350, 50, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
+    ImageIcon newJournalIcon = new ImageIcon(journalTrans); // assign to a new ImageIcon instance
+
+
+    Image affirmImg = affirm.getImage(); // transform it
+    Image affirmTrans = affirmImg.getScaledInstance(350, 50, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
+    ImageIcon newAffirmIcon = new ImageIcon(affirmTrans); // assign to a new ImageIcon instance
 
     String affirmations_txt;
     Affirmations affirmations;
@@ -147,6 +158,19 @@ public class GUI {
         happy.setBounds(470, 150, 100, 100);
         happy.setFont(new Font("Courier", Font.PLAIN, 12));
         panel.add(happy);
+        
+         journalEntry.setBorderPainted(false);
+        journalEntry.setContentAreaFilled(false);
+        journalEntry.setOpaque(false);
+        journalEntry.setBounds(125, 270, 350, 30);
+        panel.add(journalEntry);
+
+
+        getAffirmation.setBorderPainted(false);
+        getAffirmation.setContentAreaFilled(false);
+        getAffirmation.setOpaque(false);
+        getAffirmation.setBounds(125, 320, 350, 50);
+        panel.add(getAffirmation);
 
         frame.add(panel);
         /*
