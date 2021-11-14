@@ -10,6 +10,20 @@ public class GUI {
     private JButton getAffirmation;
     private JButton journalEntry;
     private JButton getPastData;
+
+    private JButton madButton;
+    private JButton happyButton;
+    private JButton sadButton;
+    private JButton okayButton;
+    private JButton notTheBestButton;
+
+    //Icons
+    private Icon affirmationIcon = new ImageIcon("images/affirmationButtonOther 1.png");
+    private Icon happy = new ImageIcon("images/happy.png");
+    private Icon mad = new ImageIcon("images/mad.png");
+    private Icon okay = new ImageIcon("images/okay.png");
+    private Icon notTheBest = new ImageIcon("images/notTheBest.png");
+    private Icon sad = new ImageIcon("images/sad.png");
     
     String affirmations_txt;
     Affirmations affirmations;
@@ -17,14 +31,21 @@ public class GUI {
 
     GUI(String date){
         this.date = date;
-        Icon affirmationIcon = new ImageIcon("images/affirmationButtonOther 1.png");
-        //getAffirmation = new JButton(affirmationIcon);
+
+        madButton = new JButton(mad);
+        happyButton = new JButton(happy);
+        sadButton = new JButton(sad);
+        okayButton = new JButton(okay);
+        notTheBestButton = new JButton(notTheBest);
+
+        
+        getAffirmation = new JButton(affirmationIcon);
         journalEntry = new JButton("Add journal entry");
-        //getPastData = new JButton("Read journal entry");
+        getPastData = new JButton("Read journal entry");
         
         initializeGUI();
-        initializeAffirmations();
-        initializeDailyJournal();
+        //initializeAffirmations();
+        //initializeDailyJournal();
         frame.setVisible(true);
 
     }
@@ -37,24 +58,25 @@ public class GUI {
         frame.setLocationRelativeTo(null); // Makes window open in middle of screen
 
         JPanel panel = new JPanel();
-        FlowLayout layout = new FlowLayout(FlowLayout.CENTER,10,5);
-        panel.setLayout(layout);
+        panel.setLayout(null);
 
 
-
-        frame.add(panel);
+        
         JLabel header = new JLabel("Today is " + date , JLabel.CENTER);
         header.setForeground(Color.BLUE);
-        header.setBounds(125, 20, 340, 40);
+        header.setBounds(125, 20, 350, 40);
         header.setFont(new Font("Courier", Font.PLAIN, 30));
         panel.add(header);
 
         JLabel rating = new JLabel("How was your day?" , JLabel.CENTER);
-        rating.setBounds(150, 70, 340, 20);
+        rating.setBounds(125, 60, 350, 40);
+        rating.setFont(new Font("Courier", Font.PLAIN, 15));
+        panel.add(rating);
 
-
-        frame.add(rating);
-
+        madButton.setBounds(10, 90, 100, 100);
+        panel.add(madButton);
+        
+        frame.add(panel);
 /*
         journalEntry.setBounds(150, 120, 340, 10 );
         getAffirmation.setBounds(150, 140, 340, 10 );
@@ -127,5 +149,7 @@ public class GUI {
     }
 
 }
+
+
 
 
