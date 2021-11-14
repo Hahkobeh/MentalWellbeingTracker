@@ -4,6 +4,10 @@ import java.util.Calendar;
 
 public class MentalWellbeingTacker {
     private static String date;
+    String affirmations_txt;
+    Affirmations affirmations;
+    DailyJournal dailyJournal;
+    MoodTracker moodTracker;
 
 
     public static void main(String[] args){
