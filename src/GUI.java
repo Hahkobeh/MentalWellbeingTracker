@@ -21,11 +21,11 @@ public class GUI {
     // Icons
     private Icon affirmationIcon = new ImageIcon("../images/affirmationButtonOther 1.png");
 
-    private ImageIcon happy = new ImageIcon("../images/happy.png");
-    private ImageIcon mad = new ImageIcon("../images/mad.png");
-    private ImageIcon okay = new ImageIcon("../images/okay.png");
-    private ImageIcon notTheBest = new ImageIcon("../images/notTheBest.png");
-    private ImageIcon sad = new ImageIcon("../images/sad.png");
+    private ImageIcon happy = new ImageIcon("./images/happy.png");
+    private ImageIcon mad = new ImageIcon("./images/mad.png");
+    private ImageIcon okay = new ImageIcon("./images/okay.png");
+    private ImageIcon notTheBest = new ImageIcon("./images/notTheBest.png");
+    private ImageIcon sad = new ImageIcon("./images/sad.png");
 
     Image happyImg = happy.getImage(); // transform it
     Image happyTrans = happyImg.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it smoothly
